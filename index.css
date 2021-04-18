@@ -1,0 +1,63 @@
+body {
+  background-color: green;
+  display: rgba(0, 128, 0, 0.5);
+  padding: 9px;
+}
+
+.panel-small {
+  color: red;
+}
+
+.card-small {
+  color: red;
+  width: 300px;
+}
+
+.card-large {
+  color: purple;
+}
+
+.section-small {
+  width: 100px;
+}
+
+.section-medium {
+  width: 300px;
+}
+
+.section-large {
+  width: 500px;
+}
+
+.button-small {
+  color: red;
+  width: 100px;
+}
+
+.button-medium {
+  color: red;
+  width: 300px;
+}
+
+.button-large {
+  color: red;
+  width: 500px;
+}
+
+.c-one {
+  margin: 10 px;
+  display: rgba(255, 0, 0, 0.5);
+  padding: 9px;
+}
+
+.c-two {
+  background-color: white;
+  display: rgba(128, 128, 128, 0.5);
+  padding: 9px;
+}
+
+.common {
+  display: flex;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,89 @@
+// sass ./index.scss ./index.css --watch
+$green-color: green;
+$primary-color: $green-color !default;
+$null-variable: null;
+$suffix: small;
+// List --> nth($suffixes, 3)
+$suffixes: small, medium, large;
+// Map --> map-get($element-sizes, medium);
+$element-sizes: (
+    small: 100px,
+    medium: 300px,
+    large: 500px,
+    );
+// Functions
+@function sum($numbers...) {
+    $sum: 0;
+    @each $var in $numbers {
+        $sum: $sum + $var;
+    }
+    @return $sum;
+}
+@function custom-color($color: #000) {
+    @if $color == black{
+        @return currentColor;
+    }
+    @return fade-out($color, 0.5%);
+}
+
+body {
+    background-color: $primary-color;
+    padding-block: $null-variable;
+    display: custom-color($primary-color);
+    padding: sum(4px, 5px);
+}
+
+$primary-color: red;
+
+.panel-#{$suffix} {
+    color: $primary-color;
+}
+
+.card-#{nth($suffixes, 1)} {
+    color: $primary-color;
+    width: map-get($element-sizes, medium);
+}
+
+.card-#{nth($suffixes, 3)} {
+    color: purple;
+}
+
+// Loops
+@each $var in $suffixes {
+    .section-#{$var} {
+        width: map-get($element-sizes, $var);
+    }
+}
+
+@each $key, $value in $element-sizes {
+    .button-#{$key} {
+        color: $primary-color;
+        width: $value;
+    }
+}
+
+// Mixin
+@mixin common($color: #fff) {
+    display: custom-color($color);
+    padding: sum(4px, 5px);
+}
+
+.c-one {
+    margin: 10 px;
+    @include common($primary-color);
+}
+
+.c-two {
+    background-color: white;
+    @include common(grey);
+}
+
+@mixin common-classes($isInLine: true) {
+    @if $isInLine {
+        .common {
+            display: flex;
+        }
+    }
+}
+
+@include common-classes();

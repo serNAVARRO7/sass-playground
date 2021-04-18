@@ -1,0 +1,28 @@
+// sass ./index2.scss ./index2.css --watch
+@use './variables.scss' as variables with (
+    $green-color: lightgreen
+);
+@use './mixins.scss' as mixins;
+
+@include mixins.common-classes();
+
+body {
+    background-color: variables.$primary-color;
+}
+
+.header {
+    @include mixins.common();
+    $color: white;
+    h1 {
+        font-size: 16px;
+        &:hover{
+            background-color: beige;
+        }
+        &.child{
+            display: inline-block;
+        }
+        @at-root .root-style {
+            color: $color;
+        }
+    }
+}

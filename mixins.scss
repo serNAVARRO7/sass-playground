@@ -1,0 +1,12 @@
+@mixin common($color: #fff) {
+    display: custom-color($color);
+    padding: sum(4px, 5px);
+}
+
+@mixin common-classes($isInLine: true) {
+    @if $isInLine {
+        .common {
+            display: flex;
+        }
+    }
+}

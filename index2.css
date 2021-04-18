@@ -1,0 +1,26 @@
+.common {
+  display: flex;
+}
+
+body {
+  background-color: lightgreen;
+}
+
+.header {
+  display: custom-color(#fff);
+  padding: sum(4px, 5px);
+}
+.header h1 {
+  font-size: 16px;
+}
+.header h1:hover {
+  background-color: beige;
+}
+.header h1.child {
+  display: inline-block;
+}
+.root-style {
+  color: white;
+}
+
+/*# sourceMappingURL=index2.css.map */

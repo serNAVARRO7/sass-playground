@@ -1,0 +1,26 @@
+$green-color: green !default;
+$primary-color: $green-color;
+$null-variable: null;
+$suffix: small;
+// List --> nth($suffixes, 3)
+$suffixes: small, medium, large;
+// Map --> map-get($element-sizes, medium);
+$element-sizes: (
+    small: 100px,
+    medium: 300px,
+    large: 500px,
+    ); 
+// Functions
+@function sum($numbers...) {
+    $sum: 0;
+    @each $var in $numbers {
+        $sum: $sum + $var;
+    }
+    @return $sum;
+}
+@function custom-color($color: #000) {
+    @if $color == black{
+        @return currentColor;
+    }
+    @return fade-out($color, 0.5%);
+}
